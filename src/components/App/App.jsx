@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-
+import Footer from '../Footer/Footer';
 import './App.css'
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -68,6 +68,7 @@ useEffect(() => {
       <Header  handleAddClick= {handleAddClick} weatherData={weatherData} />
       <Main weatherData={weatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />
     </div>
+    <Footer/> 
     <ModalWithForm title="New garment" buttonText= "Add garment" activeModal={activeModal}
       handleCloseClick={closeActiveModal}>
          <label htmlFor="name" className="modal__label">
