@@ -13,7 +13,7 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
             {clothingItems.filter((item) => {
                 return item.weather === weatherData.type;
             }).map((item) => {
-                return <ItemCard key={item._id} item={item} onCardClick />;
+                return <ItemCard key={item._id} item={item} onCardClick={handleCardClick} />;
             })}
         </ul>
         </section>

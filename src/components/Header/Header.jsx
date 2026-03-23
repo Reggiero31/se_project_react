@@ -5,7 +5,7 @@ function Header ({ handleAddClick, weatherData })  {
     const currentDate = new Date().toLocaleString('default', { month: 'long', day: 'numeric' });
     return (
     <header className="header">
-        <img className="header__logo" src={logo}></img>
+        <img className="header__logo" src={logo} alt="logo"></img>
         <p className="header__date-and-locaton">{currentDate}, {weatherData.city} 
         </p>
         <button onClick={handleAddClick} type="button"className="header__add-clothes-btn">Add clothes</button>
