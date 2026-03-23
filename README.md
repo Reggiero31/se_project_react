@@ -11,3 +11,5 @@ Currently, two official plugins are available:
 se_project_react
 
 Hello my name is Reggie Robinson I am a student at TripleTen studying software engineer. However the project that I am working on is called WTWR and this is the webpage for weather clothes so you can dress on the weather will be like for that day or that week.
+
+link github: https://github.com/Reggiero31/se_project_react.git
