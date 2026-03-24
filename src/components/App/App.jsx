@@ -12,17 +12,14 @@ import { defaultClothingItems, location, apiKey } from '../../utils/constants';
 import ItemModal from '../ItemModal/ItemModal';
 function App() {
   //const {weatherTemp, setweatherData} = useState({ type: "hot" });
-  const [WeatherData, setWeatherData] = useState({
+  const [weatherData, setWeatherData] = useState({
     type: "warm",
-    temp: { F: 999 },
+    temperature: 0, 
     city: "",
   });
 
-  const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
-  const openAddItemModal = () => {
-    setActiveModal("add-garment");
-  }
   useEffect(() => {
     if (location.latitude && location.longitude) {
       getForecastWeather(location, apiKey)
@@ -32,10 +29,7 @@ function App() {
         .catch(console.error);
     }
   }, []);
-  useEffect(() => {
-    setClothingItems(defaultClothingItems);
-  }, []);
-
+  
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
@@ -51,21 +45,30 @@ function App() {
     setActiveModal("");
   }
 
+useEffect(() => {
+      const closeByEscape = (e) => {
+        if (e.key === 'Escape') {
+          closeActiveModal();
+        }
+      }
+      document.addEventListener('keydown', closeByEscape)
 
+      return () => document.removeEventListener('keydown', closeByEscape)
+  }, [])
 
   return (
     <div className='app'>
       <div className='app__content'>
-        <Header handleAddClick={handleAddClick} weatherData={WeatherData} />
-        <Main weatherData={WeatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />
+        <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+        <Main weatherData={weatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />
       </div>
       <Footer />
-      <ModalWithForm title="New garment" buttonText="Add garment" isOpened={activeModal === "add-garment"}
+      <ModalWithForm title="New garment" buttonText="Add garment" name="add-garment" isOpened={activeModal === "add-garment"}
         onClose={closeActiveModal}>
         <label htmlFor="name" className="modal__label">
           Name{""}
           <input
-            type=""
+            type="text"
             className="modal__input"
             id="name"
             placeholder="Name"
@@ -89,6 +92,7 @@ function App() {
             <input
               name="weather"
               id="hot"
+              value="hot"
               type="radio"
               className= "modal__radio-input"
             />
@@ -102,6 +106,7 @@ function App() {
             <input
               name="weather"
               id="warm"
+              value="warm"
               type="radio"
               className="modal__radio-input"
             />
@@ -115,6 +120,7 @@ function App() {
             <input
               name="weather"
               id="cold"
+              value="cold"
               type="radio"
               className="modal__radio-input"
             />
