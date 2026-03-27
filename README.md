@@ -8,8 +8,13 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
+
+
 se_project_react
 
 Hello my name is Reggie Robinson I am a student at TripleTen studying software engineer. However the project that I am working on is called WTWR and this is the webpage for weather clothes so you can dress on the weather will be like for that day or that week.
 
-link github: https://github.com/Reggiero31/se_project_react.git
+link github: https://github.com/Reggiero31/se_project_react
+
+react project video
+https://www.loom.com/share/2b1e86a7112941879e5c79415458223d

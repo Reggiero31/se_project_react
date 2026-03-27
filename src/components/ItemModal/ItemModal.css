@@ -1,0 +1,35 @@
+.modal__content_type_image {
+
+}
+
+.modal__image {
+
+}
+
+.modal__footer {
+width: 1358px;
+height: 20px;
+top: 778px;
+left: 40px;
+background-color: #000;
+}
+
+.modal__caption {
+width: 330px;
+height: 25px;
+top: 220px;
+left: 40px;
+font-family: cabinet Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-style: Bold;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #000;
+}
+
+.modal__weather {
+width: 1360px;
+height: 80px;
+top: 100px;
+left: 40px;
+}

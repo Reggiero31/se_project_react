@@ -1,0 +1,21 @@
+.card {
+
+}
+
+.card__name {
+width: 73px;
+height: 24px;
+top: 295px;
+left: 166px;
+border-radius: 4px;
+background-color: #fff;
+}
+
+.card__image {
+    width: 325px;
+    height: 328px;
+    top: 279px;
+    left: 38px;
+
+}
+
