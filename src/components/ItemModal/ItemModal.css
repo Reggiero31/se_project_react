@@ -1,35 +1,39 @@
 .modal__content_type_image {
-padding: 0;
-
+  padding: 0;
 }
 
 .modal__image {
-width: 498px;
-height: 498px;
-object-fit: cover;
-
+  width: 498px;
+  height: 498px;
+  object-fit: cover;
 }
 
 .modal__footer {
-top: 778px;
-left: 40px;
-padding: 0 15px;
+  top: 778px;
+  left: 40px;
+  padding: 0 15px;
 }
 
 .modal__caption {
-width: 330px;
-top: 220px;
-left: 40px;
-font-family: cabinet grotesk, Cochin, Georgia, Times, 'Times New Roman', serif;
-font-style: Bold;
-font-size: 20px;
-line-height: 100%;
-letter-spacing: 0%;
-color: #000;
+  width: 330px;
+  top: 220px;
+  left: 40px;
+  font-family:
+    cabinet grotesk,
+    Cochin,
+    Georgia,
+    Times,
+    "Times New Roman",
+    serif;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;
 }
 
 .modal__weather {
-width: 1360px;
-top: 100px;
-left: 40px;
+  width: 1360px;
+  top: 100px;
+  left: 40px;
 }

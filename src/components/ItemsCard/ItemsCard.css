@@ -1,21 +1,28 @@
 .card {
-
+  position: relative;
 }
 
 .card__name {
-width: 73px;
-height: 24px;
-top: 295px;
-left: 166px;
-border-radius: 4px;
-background-color: #fff;
+  width: 73px;
+  height: 24px;
+  top: 295px;
+  left: 166px;
+  border-radius: 4px;
+  background-color: #fff;
 }
 
 .card__image {
-    width: 325px;
-    height: 328px;
-    top: 279px;
-    left: 38px;
-
+  width: 325px;
+  height: 328px;
+  top: 279px;
+  left: 38px;
 }
 
+.card__header {
+  position: absolute;
+  padding: 15px;
+  justify-content: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+}

@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import Footer from '../Footer/Footer';
-import './App.css'
-import Header from '../Header/Header';
-import Main from '../Main/Main';
+import { useState, useEffect } from "react";
+import Footer from "../Footer/Footer";
+import "./App.css";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import {
   filterDataFromWeatherAPI,
   getForecastWeather,
 } from "../../utils/weatherApi";
-import { defaultClothingItems, location, apiKey } from '../../utils/constants';
-import ItemModal from '../ItemModal/ItemModal';
+import { defaultClothingItems, location, apiKey } from "../../utils/constants";
+import ItemModal from "../ItemModal/ItemModal";
 function App() {
   //const {weatherTemp, setweatherData} = useState({ type: "hot" });
   const [weatherData, setWeatherData] = useState({
@@ -34,37 +34,46 @@ function App() {
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
-    setSelectedCard(card)
-  }
+    setSelectedCard(card);
+  };
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
-  }
+  };
 
   const closeActiveModal = () => {
     setActiveModal("");
-  }
+  };
 
   useEffect(() => {
     const closeByEscape = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         closeActiveModal();
       }
-    }
-    document.addEventListener('keydown', closeByEscape)
+    };
+    document.addEventListener("keydown", closeByEscape);
 
-    return () => document.removeEventListener('keydown', closeByEscape)
-  }, [])
+    return () => document.removeEventListener("keydown", closeByEscape);
+  }, []);
 
   return (
-    <div className='app'>
-      <div className='app__content'>
+    <div className="app">
+      <div className="app__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        <Main weatherData={weatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />
+        <Main
+          weatherData={weatherData}
+          clothingItems={clothingItems}
+          handleCardClick={handleCardClick}
+        />
       </div>
       <Footer />
-      <ModalWithForm title="New garment" buttonText="Add garment" name="add-garment" isOpened={activeModal === "add-garment"}
-        onClose={closeActiveModal}>
+      <ModalWithForm
+        title="New garment"
+        buttonText="Add garment"
+        name="add-garment"
+        isOpened={activeModal === "add-garment"}
+        onClose={closeActiveModal}
+      >
         <label htmlFor="name" className="modal__label">
           Name{""}
           <input
@@ -85,10 +94,7 @@ function App() {
         </label>
         <fieldset className="modal__radio-buttons">
           <legend className="modal__legend"> weather type;</legend>
-          <label
-            htmlFor="hot"
-            className="modal__label modal__label_type_radio"
-          >
+          <label htmlFor="hot" className="modal__label modal__label_type_radio">
             <input
               name="weather"
               id="hot"
@@ -102,7 +108,6 @@ function App() {
             htmlFor="warm"
             className="modal__label modal__label_type_radio"
           >
-
             <input
               name="weather"
               id="warm"
@@ -116,7 +121,6 @@ function App() {
             htmlFor="cold"
             className="modal__label modal__label_type_radio"
           >
-
             <input
               name="weather"
               id="cold"
@@ -128,10 +132,13 @@ function App() {
           </label>
         </fieldset>
       </ModalWithForm>
-      <ItemModal activeModal={activeModal} card={selectedCard} onClose={closeActiveModal}
+      <ItemModal
+        activeModal={activeModal}
+        card={selectedCard}
+        onClose={closeActiveModal}
       />
     </div>
   );
 }
 
-export default App
+export default App;

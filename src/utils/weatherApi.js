@@ -1,6 +1,6 @@
 export const getForecastWeather = ({ latitude, longitude }, APIkey) =>
-   fetch (
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`,
   ).then((res) => {
     if (res.ok) {
       return res.json();
@@ -12,11 +12,7 @@ const isDay = ({ sunrise, sunset }, now) => {
   return sunrise * 1000 < now && now < sunset * 1000;
 };
 
-  const filterDataFromWeatherAPI = (data) => {
-
-
-
-
+const filterDataFromWeatherAPI = (data) => {
   const weather = {};
   weather.city = data.name;
   weather.temperature = data.main.temp;
@@ -36,4 +32,4 @@ const getWeatherType = (temp) => {
   }
 };
 
-export {  filterDataFromWeatherAPI };
+export { filterDataFromWeatherAPI };
