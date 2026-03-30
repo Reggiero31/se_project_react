@@ -3,12 +3,14 @@
 }
 
 .cards__text {
-width: 115px;
 height: 24px;
 top: 660px;
 left: 503px;
 }
 
 .cards__list {
- 
+ list-style-type: none;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 20px;
 }

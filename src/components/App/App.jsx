@@ -14,7 +14,7 @@ function App() {
   //const {weatherTemp, setweatherData} = useState({ type: "hot" });
   const [weatherData, setWeatherData] = useState({
     type: "warm",
-    temperature: 0, 
+    temperature: 0,
     city: "",
   });
 
@@ -29,7 +29,7 @@ function App() {
         .catch(console.error);
     }
   }, []);
-  
+
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
@@ -45,15 +45,15 @@ function App() {
     setActiveModal("");
   }
 
-useEffect(() => {
-      const closeByEscape = (e) => {
-        if (e.key === 'Escape') {
-          closeActiveModal();
-        }
+  useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeActiveModal();
       }
-      document.addEventListener('keydown', closeByEscape)
+    }
+    document.addEventListener('keydown', closeByEscape)
 
-      return () => document.removeEventListener('keydown', closeByEscape)
+    return () => document.removeEventListener('keydown', closeByEscape)
   }, [])
 
   return (
@@ -94,7 +94,7 @@ useEffect(() => {
               id="hot"
               value="hot"
               type="radio"
-              className= "modal__radio-input"
+              className="modal__radio-input"
             />
             hot
           </label>
