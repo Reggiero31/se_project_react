@@ -12,6 +12,8 @@ se_project_react
 Hello my name is Reggie Robinson I am a student at TripleTen studying software engineer. However the project that I am working on is called WTWR and this is the webpage for weather clothes so you can dress on the weather will be like for that day or that week.
 
 link github: https://github.com/Reggiero31/se_project_react
+https://github.com/Reggiero31/se_project_react.git
 
 react project video
 https://www.loom.com/share/2b1e86a7112941879e5c79415458223d
+
