@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import CurrentTemperatureUnitContext from "../Footer/Contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import {
   filterDataFromWeatherAPI,
@@ -14,7 +14,6 @@ import {
 } from "../../utils/weatherApi";
 import { defaultClothingItems, location, apiKey } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
-
 
 function App() {
   //const {weatherTemp, setweatherData} = useState({ type: "hot" });

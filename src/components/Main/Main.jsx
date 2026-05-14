@@ -1,8 +1,8 @@
 import "./Main.css";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import WeatherCard from "../WeatherCard/WeatherCard.jsx";
 import ItemCard from "../ItemsCard/ItemsCard.jsx";
-import CurrentTemperatureUnitContext from "../Footer/Contexts/CurrentTemperatureUnitContext.jsx";
+import CurrentTemperatureUnitContext  from '../contexts/CurrentTemperatureUnitContext.jsx';
 
 const Main = ({ weatherData, handleCardClick, clothingItems }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
@@ -32,6 +32,6 @@ const Main = ({ weatherData, handleCardClick, clothingItems }) => {
       </section>
     </main>
   );
-}
+};
 
 export default Main;

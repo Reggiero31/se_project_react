@@ -1,2 +1,4 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
+@import Url(./components/AddItemModal/AddItemModal.css);
+@import Url(./components/profile/Profile.css);
