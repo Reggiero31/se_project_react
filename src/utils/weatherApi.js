@@ -15,8 +15,9 @@ const isDay = ({ sunrise, sunset }, now) => {
 const filterDataFromWeatherAPI = (data) => {
   const weather = {};
   weather.city = data.name;
-  weather.temperature = data.main.temp;
-  weather.type = getWeatherType(weather.temperature);
+  ((weather.temperature = Math.round(((data.main.temp - 32) * 5) / 9)),
+    Math.round(((data.main.temp - 32) * 5) / 9),
+    (weather.type = getWeatherType(weather.temperature)));
   weather.day = isDay(data.sys, Date.now());
   weather.condition = data.weather[0].main.toLowerCase();
   return weather;
