@@ -1,6 +1,6 @@
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { useContext } from "react";
-import CurrentTemperatureUnitContext from "../../utils/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
 import "./Header.css";
 import logo from "../../assets/Logo.svg";
 import avatar from "../../assets/avatar.png";

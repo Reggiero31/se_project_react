@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import CurrentTemperatureUnitContext from "../../utils/CurrentTemperatureUnitContext.jsx";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import {
   filterDataFromWeatherAPI,
