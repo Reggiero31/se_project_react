@@ -1,6 +1,6 @@
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { useContext } from "react";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import "./Header.css";
 import logo from "../../assets/Logo.svg";
 import avatar from "../../assets/avatar.png";
@@ -12,10 +12,12 @@ function Header({ handleAddClick, weatherData }) {
   });
   return (
     <header className="header">
-      <img className="header__logo" src={logo} alt="logo"></img>
-      <p className="header__date-and-location">
-        {currentDate}, {weatherData.city}
-      </p>
+      <Link to="/">
+        <img className="header__logo" src={logo} alt="logo"></img>
+        <p className="header__date-and-location">
+          {currentDate}, {weatherData.city}
+        </p>
+      </Link>
       <ToggleSwitch />
       <button
         onClick={handleAddClick}
