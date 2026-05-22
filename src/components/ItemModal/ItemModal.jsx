@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import closebutton from "../../assets/Xclosebutton.png";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, onClose, card, onDelete }) {
   if (!card) {
     return null;
   }
@@ -21,6 +21,13 @@ function ItemModal({ activeModal, onClose, card }) {
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">weather: {card.weather}</p>
+          <button
+            className="modal__delete-btn"
+            type="button"
+            onClick={() => onDelete(card._id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

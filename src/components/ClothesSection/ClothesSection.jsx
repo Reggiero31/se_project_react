@@ -1,4 +1,9 @@
 import "./ClothesSection.css";
 export default function ClothesSection() {
-  return <p>ClothingSection</p>;
+  return (
+    <div>
+      <p>ClothingSection</p>
+      <button>AddNew</button>
+    </div>
+  );
 }

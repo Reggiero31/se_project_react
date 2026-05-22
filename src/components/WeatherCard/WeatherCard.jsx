@@ -6,7 +6,6 @@ import { weatherOptions, defaultWeatherOptions } from "../../utils/constants";
 
 function WeatherCard({ weatherData }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  console.log(weatherData);
   const filteredOptions = weatherOptions.filter((option) => {
     return (
       option.day === weatherData.isDay &&
@@ -27,7 +26,11 @@ function WeatherCard({ weatherData }) {
         {Math.round(weatherData.temperature[currentTemperatureUnit])} &deg;{" "}
         {currentTemperatureUnit}
       </p>
-      <img src={weatherOption.url} alt="" className="weather-card__image" />
+      <img
+        src={weatherOption.url}
+        alt="Weather illustration"
+        className="weather-card__image"
+      />
     </section>
   );
 }

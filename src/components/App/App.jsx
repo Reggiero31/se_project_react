@@ -1,5 +1,6 @@
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import Profile from "../profile/Profile.jsx";
+import { addItem, getItems, deleteItem } from "../../utils/api.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Footer from "../Footer/Footer";
@@ -24,6 +25,7 @@ function App() {
   });
 
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+
   const [activeModal, setActiveModal] = useState("");
   useEffect(() => {
     if (location.latitude && location.longitude) {
@@ -33,6 +35,9 @@ function App() {
         })
         .catch(console.error);
     }
+    getItems().then((items) => {
+      setClothingItems(items);
+    });
   }, []);
 
   const [selectedCard, setSelectedCard] = useState({});
@@ -60,10 +65,21 @@ function App() {
       link: inputValues,
       weather: inputValues.weatherType,
     };
-    // Dont use newCardData
-    setClothingItems([...clothingItems, inputValues]);
-    closeAllModal();
-    // .catch()
+    addItem(newCardData)
+      .then((newCard) => {
+        setClothingItems([newCard, ...clothingItems]);
+        closeAllModal();
+      })
+      .catch(console.error);
+  };
+
+  const handleDeleteItem = (id) => {
+    deleteItem(id)
+      .then(() => {
+        setClothingItems((prev) => prev.filter((item) => item._id !== id));
+        setActiveModal("");
+      })
+      .catch((err) => console.error("Delete failed:", err));
   };
 
   const handleAddClick = () => {
@@ -75,6 +91,8 @@ function App() {
   };
 
   useEffect(() => {
+    if (!activeModal) return;
+
     const closeByEscape = (e) => {
       if (e.key === "Escape") {
         closeActiveModal();
@@ -83,8 +101,9 @@ function App() {
     document.addEventListener("keydown", closeByEscape);
 
     return () => document.removeEventListener("keydown", closeByEscape);
-  }, []);
+  }, [activeModal]);
 
+  console.log(activeModal);
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -108,23 +127,18 @@ function App() {
           </Routes>
         </div>
         <Footer />
-        <ModalWithForm
-          title="New garment"
-          buttonText="Add garment"
-          name="add-garment"
-          isOpened={activeModal === "add-garment"}
-          onClose={closeActiveModal}
-        ></ModalWithForm>
-        <AddItemModal>
-          isOpened=
-          {activeModal === "add-garment"}
-          onClose={closeActiveModal}
+
+        <AddItemModal
+          isOpen={activeModal === "add-garment"}
           onAddItem={onAddItem}
-        </AddItemModal>
+          onClose={closeActiveModal}
+        />
+
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          onDelete={handleDeleteItem}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

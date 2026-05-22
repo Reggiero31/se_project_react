@@ -17,7 +17,7 @@ function getItems() {
 }
 
 function addItem({ name, imageUrl, weather }) {
-  return request(`${baseUrl}/items `, {
+  return request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
