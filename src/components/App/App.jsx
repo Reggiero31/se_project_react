@@ -68,7 +68,7 @@ function App() {
     addItem(newCardData)
       .then((newCard) => {
         setClothingItems([newCard, ...clothingItems]);
-        closeAllModal();
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -77,7 +77,7 @@ function App() {
     deleteItem(id)
       .then(() => {
         setClothingItems((prev) => prev.filter((item) => item._id !== id));
-        setActiveModal("");
+        closeActiveModal();
       })
       .catch((err) => console.error("Delete failed:", err));
   };
