@@ -31,6 +31,7 @@ function App() {
     if (location.latitude && location.longitude) {
       getForecastWeather(location, apiKey)
         .then((data) => {
+          console.log(data);
           setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch(console.error);
@@ -123,7 +124,16 @@ function App() {
                 />
               }
             />
-            <Route path="/profile" element={<Profile />}></Route>
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  weatherData={weatherData}
+                  handleAddClick={handleAddClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            ></Route>
           </Routes>
         </div>
         <Footer />

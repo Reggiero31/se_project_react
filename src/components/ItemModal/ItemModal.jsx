@@ -5,6 +5,7 @@ function ItemModal({ activeModal, onClose, card, onDelete }) {
   if (!card) {
     return null;
   }
+  console.log(card);
   return (
     <div
       className={`modal ${activeModal === "preview" && "modal_opened"}`}
@@ -17,7 +18,7 @@ function ItemModal({ activeModal, onClose, card, onDelete }) {
         <button onClick={onClose} type="button" className="modal__close">
           <img src={closebutton} alt="closebutton" />
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">weather: {card.weather}</p>

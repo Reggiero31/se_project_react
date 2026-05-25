@@ -23,9 +23,11 @@
 
 .modal__content_type_image {
   padding: 0;
+  overflow: hidden;
 }
 
 .modal__image {
+  z-index: 100;
   width: 498px;
   height: 498px;
   object-fit: cover;

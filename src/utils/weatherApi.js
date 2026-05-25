@@ -3,21 +3,19 @@ export const getForecastWeather = ({ latitude, longitude }, APIkey) =>
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`,
   ).then((res) => {
-    handleServerResponse(res);
+    return handleServerResponse(res);
   });
 const isDay = ({ sunrise, sunset }, now) => {
   return sunrise * 1000 < now && now < sunset * 1000;
 };
 
 const filterDataFromWeatherAPI = (data) => {
-  const kelvin = data.main.temp;
-
-  const toF = (k) => Math.round(((k - 273.15) * 9) / 5 + 32);
-  const toC = (k) => Math.round(k - 273.15);
+  const farneheit = Math.round(data.main.temp);
+  const celcius = Math.round((data.main.temp - 32) * (5 / 9));
 
   const temperature = {
-    F: toF(kelvin),
-    C: toC(kelvin),
+    F: farneheit,
+    C: celcius,
   };
 
   const weather = {};

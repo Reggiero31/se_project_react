@@ -1,22 +1,19 @@
 import "./SideBar.css";
-import weatherData from "../WeatherCard/WeatherCard";
+import { Link } from "react-router-dom";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import logo from "../../assets/Logo.svg";
+import avatar from "../../assets/avatar.png";
 
-export default function SideBar() {
+export default function SideBar({ weatherData, handleAddClick }) {
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div className="SideBar__Profile">
-      <img className="SideBar__logo" src={logo} alt="logo"></img>
-      <p className="SideBar__date-and-location">
-        {currentDate}, {weatherData.city}
-      </p>
-      <ToggleSwitch />
-      <button
-        onClick={handleAddClick}
-        type="button"
-        className="SideBar__add-clothes-btn"
-      >
-        Add clothes
-      </button>
-      <Link to="/SideBar">
+      
+      
         <div className="SideBar__user-container">
           <p className="SideBar__username">Terrence Tegegne</p>
           <img
@@ -25,7 +22,7 @@ export default function SideBar() {
             className="SideBar__avatar"
           ></img>
         </div>
-      </Link>
+     
     </div>
   );
 }

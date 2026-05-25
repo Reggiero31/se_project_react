@@ -1,0 +1,20 @@
+.AddItemModal__input {
+  width: 94px;
+  height: 25px;
+  top: 135px;
+  left: 385px;
+  font-family: "cabinet Grotesk";
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;
+}
+.AddItemModal__AddNew-btn {
+  font-size: 16px;
+  padding: 1px 6px;
+  background-color: #f0f0f0;
+  color: #000;
+  font-family: "cabinet Grotesk", sans-serif;
+}
