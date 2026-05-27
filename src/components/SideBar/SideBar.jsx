@@ -15,12 +15,12 @@ export default function SideBar({ weatherData, handleAddClick }) {
       
       
         <div className="SideBar__user-container">
-          <p className="SideBar__username">Terrence Tegegne</p>
           <img
             src={avatar}
             alt="Terrence Tegegne"
             className="SideBar__avatar"
           ></img>
+          <p className="SideBar__username">Terrence Tegegne</p>
         </div>
      
     </div>

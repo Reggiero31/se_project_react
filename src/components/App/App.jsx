@@ -131,6 +131,7 @@ function App() {
                   weatherData={weatherData}
                   handleAddClick={handleAddClick}
                   clothingItems={clothingItems}
+                  handleCardClick={handleCardClick}
                 />
               }
             ></Route>

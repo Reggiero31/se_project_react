@@ -20,8 +20,10 @@ function ItemModal({ activeModal, onClose, card, onDelete }) {
         </button>
         <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
-          <h2 className="modal__caption">{card.name}</h2>
+          <div className="modal__content">
+            <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">weather: {card.weather}</p>
+          </div>
           <button
             className="modal__delete-btn"
             type="button"

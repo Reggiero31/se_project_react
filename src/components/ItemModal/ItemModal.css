@@ -1,22 +1,19 @@
 .modal__delete-btn {
-  margin-top: 12px;
-  padding: 8px 16px;
-  background-color: #000;
-  color: white;
+  color: #ff4d00;
   border: none;
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.2 ease;
+  background-color: transparent;
 }
 
 .modal__delete-btn:hover {
-  background-color: #d9363e;
+  background-color: #ff4d00;
 }
 
 .modal__footer {
   display: flex;
-  flex-direction: column;
   gap: 8px;
   padding: 15px;
 }
@@ -58,7 +55,4 @@
 }
 
 .modal__weather {
-  width: 1360px;
-  top: 100px;
-  left: 40px;
 }

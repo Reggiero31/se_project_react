@@ -1,0 +1,8 @@
+.SideBar__Profile {
+  width: 300px;
+}
+
+.SideBar__user-container {
+  display: flex;
+  gap: 12px;
+}
