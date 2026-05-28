@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "_id": 4,
-      "name": "Dress",
-      "weather": "hot",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Dress.png?etag=1f9cd32a311ab139cab43494883720bf"
-    },
-    {
       "_id": 5,
       "name": "Hoodie",
       "weather": "cold",
@@ -53,6 +47,12 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
+    },
+    {
+      "name": "baseball",
+      "imageUrl": "https://cdn.pixabay.com/photo/2024/05/28/18/16/baseball-8794449_1280.jpg",
+      "weather": "",
+      "_id": 17
     }
   ]
 }

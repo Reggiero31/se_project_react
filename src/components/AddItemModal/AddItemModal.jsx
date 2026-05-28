@@ -1,10 +1,10 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../../hooks/useForm";
 
-function AddItemModal( {isOpen, onAddItem, onClose} ) {
+function AddItemModal({ isOpen, onAddItem, onClose }) {
   const defaultValues = {
     name: "",
-    link: "",
+    imageUrl: "",
     weatherType: "",
   };
 
@@ -29,7 +29,7 @@ function AddItemModal( {isOpen, onAddItem, onClose} ) {
           name="name"
           required
           type="text"
-          className="modal__input_input_type_card-name"
+          className="modal__input_modal__input_input_card-name"
           id="name"
           placeholder="Name"
           maxLength="30"

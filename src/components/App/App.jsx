@@ -36,9 +36,11 @@ function App() {
         })
         .catch(console.error);
     }
-    getItems().then((items) => {
-      setClothingItems(items);
-    });
+    getItems()
+      .then((items) => {
+        setClothingItems(items);
+      })
+      .catch(console.error);
   }, []);
 
   const [selectedCard, setSelectedCard] = useState({});
@@ -63,7 +65,7 @@ function App() {
     // .then() includes all the stuff below
     const newCardData = {
       name: inputValues.name,
-      link: inputValues,
+      imageUrl: inputValues.imageUrl,
       weather: inputValues.weatherType,
     };
     addItem(newCardData)

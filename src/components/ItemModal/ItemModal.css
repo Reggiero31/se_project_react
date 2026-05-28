@@ -9,7 +9,7 @@
 }
 
 .modal__delete-btn:hover {
-  background-color: #ff4d00;
+  opacity: 0.8;
 }
 
 .modal__footer {
