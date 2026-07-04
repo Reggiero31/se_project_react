@@ -4,5 +4,37 @@
 
 .SideBar__user-container {
   display: flex;
+  align-items: center;
   gap: 12px;
+}
+
+.SideBar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.SideBar__avatar_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d9d9d9;
+  color: #000;
+  font-weight: 700;
+}
+
+.SideBar__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.SideBar__edit-btn {
+  border: none;
+  background: transparent;
+  color: #000;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
 }

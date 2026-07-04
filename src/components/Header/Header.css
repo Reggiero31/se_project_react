@@ -6,7 +6,7 @@
 }
 
 .header__logo {
- /*argin-right: 24px;*/
+  /*argin-right: 24px;*/
 }
 
 .header__date-and-location {
@@ -22,17 +22,16 @@
 }
 
 .header__add-clothes-btn {
-  width: -116px;
-  height: 24px;
-  top: 8px;
-  left: 1015px;
-  font-family: Cabinet Grotesk;
-  font-weight: -700;
-  font-style: Bold;
-  font-size: -20px;
-  line-height: -24px;
-  letter-spacing: 0%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
   color: #000;
+  cursor: pointer;
 }
 
 .header__user-container {
@@ -43,4 +42,20 @@
 
 .header__username {
   margin: 0;
+}
+
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header__avatar_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d9d9d9;
+  color: #000;
+  font-weight: 700;
 }

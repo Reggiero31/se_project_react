@@ -1,28 +1,43 @@
 import "./SideBar.css";
-import { Link } from "react-router-dom";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import logo from "../../assets/Logo.svg";
-import avatar from "../../assets/avatar.png";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 
-export default function SideBar({ weatherData, handleAddClick }) {
-  const currentDate = new Date().toLocaleString("default", {
-    month: "long",
-    day: "numeric",
-  });
+export default function SideBar({ onEditProfileClick, handleLogout }) {
+  const currentUser = useContext(CurrentUserContext);
+  const avatarInitial = currentUser?.name?.charAt(0)?.toUpperCase() || "U";
 
   return (
     <div className="SideBar__Profile">
-      
-      
-        <div className="SideBar__user-container">
+      <div className="SideBar__user-container">
+        {currentUser?.avatar ? (
           <img
-            src={avatar}
-            alt="Terrence Tegegne"
+            src={currentUser.avatar}
+            alt={`${currentUser.name}'s avatar`}
             className="SideBar__avatar"
-          ></img>
-          <p className="SideBar__username">Terrence Tegegne</p>
+          />
+        ) : (
+          <div className="SideBar__avatar SideBar__avatar_placeholder">
+            {avatarInitial}
+          </div>
+        )}
+        <div className="SideBar__info">
+          <p className="SideBar__username">{currentUser?.name || "User"}</p>
+          <button
+            type="button"
+            className="SideBar__edit-btn"
+            onClick={onEditProfileClick}
+          >
+            Edit profile
+          </button>
+          <button
+            type="button"
+            className="SideBar__edit-btn"
+            onClick={handleLogout}
+          >
+            Sign out
+          </button>
         </div>
-     
+      </div>
     </div>
   );
 }

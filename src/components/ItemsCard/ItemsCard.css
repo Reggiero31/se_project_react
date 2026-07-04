@@ -3,17 +3,14 @@
 }
 
 .card__name {
-max-width:max-content;
+  max-width: max-content;
   width: 73px;
   height: 24px;
   top: 295px;
   left: 166px;
   border-radius: 4px;
   background-color: #fff;
-  padding-top: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
-  padding-left: 8px;
+  padding: 2px 2px 2px 8px;
   gap: 8px;
 }
 
@@ -32,4 +29,19 @@ max-width:max-content;
   width: 100%;
   top: 0;
   left: 0;
+}
+
+.card__like-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+.card__like-button_active {
+  color: #ff4d00;
 }
