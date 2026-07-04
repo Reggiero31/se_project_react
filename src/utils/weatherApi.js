@@ -1,7 +1,7 @@
 import { handleServerResponse } from "./api";
-export const getForecastWeather = ({ latitude, longitude }, APIkey) =>
+export const getForecastWeather = ({ latitude, longitude }, apiKey) =>
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`,
   ).then((res) => {
     return handleServerResponse(res);
   });
@@ -22,7 +22,7 @@ const filterDataFromWeatherAPI = (data) => {
   weather.city = data.name;
   weather.temperature = temperature;
   weather.type = getWeatherType(temperature.F); // classify using Fahrenheit
-  weather.day = isDay(data.sys, Date.now());
+  weather.isDay = isDay(data.sys, Date.now());
   weather.condition = data.weather[0].main.toLowerCase();
 
   return weather;

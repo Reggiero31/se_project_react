@@ -1,12 +1,6 @@
+import { request } from "./api";
+
 const baseUrl = "http://localhost:3001";
-
-function handleServerResponse(res) {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-}
-
-function request(url, options) {
-  return fetch(url, options).then(handleServerResponse);
-}
 
 function register({ name, avatar, email, password }) {
   return request(`${baseUrl}/signup`, {

@@ -28,11 +28,15 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { register, login, checkToken, updateUser } from "../../utils/auth";
 
 function App() {
-  const [weatherData, setWeatherData] = useState({
+  const initialWeatherData = {
     type: "warm",
-    temperature: 0,
+    temperature: { F: 0, C: 0 },
     city: "",
-  });
+    isDay: true,
+    condition: "clear",
+  };
+
+  const [weatherData, setWeatherData] = useState(initialWeatherData);
 
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
@@ -148,7 +152,7 @@ function App() {
     updateUser(inputValues, token)
       .then((response) => {
         const user = response.user ?? response.data ?? response;
-        setCurrentUser(user);
+        setCurrentUser((prevUser) => ({ ...prevUser, ...user }));
         closeActiveModal();
       })
       .catch(() => {
