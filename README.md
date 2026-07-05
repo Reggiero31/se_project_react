@@ -6,6 +6,7 @@ WTWR is a full-stack weather-based clothing app that helps users choose outfits 
 
 - Frontend repository: https://github.com/Reggiero31/se_project_react
 - Backend repository (Project 13 / se_project_express): https://github.com/Reggiero31/se_project_express
+  However this is the separate Express API repository used by the frontend app. Therefore you can  make sure it is public and accessible if you are reviewing or running the full-stack project.
 
 ## Features
 
