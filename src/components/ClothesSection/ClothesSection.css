@@ -6,3 +6,13 @@
   display: flex;
   gap: 12px;
 }
+
+.add-btn {
+  border: none;
+  background: transparent;
+  color: #000;
+  font-family: "cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  padding: 0;
+  cursor: pointer;
+}

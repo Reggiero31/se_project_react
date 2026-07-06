@@ -161,15 +161,13 @@ function App() {
   };
 
   const handleCardLike = ({ id, isLiked }) => {
-    const storedToken = localStorage.getItem("jwt");
-
-    if (!storedToken) {
+    if (!token) {
       return;
     }
 
     const request = !isLiked
-      ? addCardLike(id, storedToken)
-      : removeCardLike(id, storedToken);
+      ? addCardLike(id, token)
+      : removeCardLike(id, token);
 
     request
       .then((updatedCard) => {
@@ -187,12 +185,16 @@ function App() {
       weather: inputValues.weatherType,
     };
 
-    addItem(newCardData, token)
+    return addItem(newCardData, token)
       .then((newCard) => {
         setClothingItems((prevItems) => [newCard, ...prevItems]);
         closeActiveModal();
+        return newCard;
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+        throw error;
+      });
   };
 
   const handleDeleteItem = (id) => {

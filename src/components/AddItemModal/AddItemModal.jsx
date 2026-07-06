@@ -8,11 +8,13 @@ function AddItemModal({ isOpen, onAddItem, onClose }) {
     weatherType: "",
   };
 
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, handleChange, handleReset } = useForm(defaultValues);
 
   function onFormSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values);
+    onAddItem(values).then(() => {
+      handleReset();
+    });
   }
 
   return (
@@ -23,13 +25,13 @@ function AddItemModal({ isOpen, onAddItem, onClose }) {
       onClose={onClose}
       onSubmit={onFormSubmit}
     >
-      <label className="node__label">
+      <label className="modal__label">
         Name{""}
         <input
           name="name"
           required
           type="text"
-          className="modal__input_modal__input_input_card-name"
+          className="modal__input"
           id="name"
           placeholder="Name"
           maxLength="30"
